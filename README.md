@@ -1,15 +1,15 @@
+##Weather App For iOS
 This app isn't going to the App Store because it doesn't use an API to retrieve the data from the source, it actually just reads the source code of the website and only takes the information that I need.
 
-Screen shots:
-[alt tag!](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Main%20Screen.png)
-[alt tag!](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Typed%20In%20Text%20Field.png)
-[alt tag!](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Retrieved%20Weather.png)
-[alt tag!](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Error%20Text.png)
+#Screen shots:
+![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Main%20Screen.png)
+![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Typed%20In%20Text%20Field.png)
+![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Retrieved%20Weather.png)
+![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Error%20Text.png)
 
-Source code:
+#Source code:
 ```objective-c
 
-//
 //  ViewController.swift
 //  What's The Weather
 //
@@ -38,11 +38,10 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
         
         //setting the urlString to the address of the website, it will add the city that you type into the city text field
-        var urlString = "http://www.weather-forecast.com/locations/" + city.text.stringByReplacingOccurrencesOfString(" ", withString: "") + "/forecasts/latest"
+        var urlString = "http://www.weather-forecast.com/locations/" + city.text.stringByReplacingOccurrencesOfString(" ",              withString: "") + "/forecasts/latest"
         
         //Setting the url to the urlString
         var url = NSURL(string: urlString)
-        
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!){(data, response, error) in
             
@@ -58,14 +57,13 @@ class ViewController: UIViewController {
             
                 //Changing the text color to white
                 self.message.textColor = UIColor .whiteColor()
-                self.message.text = (newContentArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º") as? String)
-                    
+                self.message.text = (newContentArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º") as?                      String)
+                
                 }
             } else {
                 
                 //Stop doing anything else and complete this code also
                 dispatch_async(dispatch_get_main_queue()) {
-
                 
                 //Changing the text color to red
                 self.message.textColor = UIColor .redColor()
