@@ -1,13 +1,13 @@
-##Weather App For iOS
+#Weather App For iOS
 This app isn't going to the App Store because it doesn't use an API to retrieve the data from the source, it actually just reads the source code of the website and only takes the information that I need.
 
-#Screen shots:
+##Screen shots:
 ![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Main%20Screen.png)
 ![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Typed%20In%20Text%20Field.png)
 ![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Retrieved%20Weather.png)
 ![alt tag](https://github.com/divinedavis/What-s-The-Weather-iOS-App/blob/master/Error%20Text.png)
 
-#Source code:
+##Source code:
 ```objective-c
 
 //  ViewController.swift
